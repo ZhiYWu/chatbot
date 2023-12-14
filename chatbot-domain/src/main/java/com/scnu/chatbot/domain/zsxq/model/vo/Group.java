@@ -1,7 +1,7 @@
 package com.scnu.chatbot.domain.zsxq.model.vo;
 
 public class Group {
-    private int group_id;
+    private String group_id;
 
     private String name;
 
@@ -9,10 +9,10 @@ public class Group {
 
     private String background_url;
 
-    public void setGroup_id(int group_id){
+    public void setGroup_id(String group_id){
         this.group_id = group_id;
     }
-    public int getGroup_id(){
+    public String getGroup_id(){
         return this.group_id;
     }
     public void setName(String name){

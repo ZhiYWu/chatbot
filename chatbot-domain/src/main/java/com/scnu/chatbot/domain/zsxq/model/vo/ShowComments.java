@@ -1,7 +1,7 @@
 package com.scnu.chatbot.domain.zsxq.model.vo;
 
 public class ShowComments {
-    private int comment_id;
+    private String comment_id;
 
     private String create_time;
 
@@ -15,10 +15,10 @@ public class ShowComments {
 
     private boolean sticky;
 
-    public void setComment_id(int comment_id){
+    public void setComment_id(String comment_id){
         this.comment_id = comment_id;
     }
-    public int getComment_id(){
+    public String getComment_id(){
         return this.comment_id;
     }
     public void setCreate_time(String create_time){
