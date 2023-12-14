@@ -42,7 +42,7 @@ public class ApiTest {
         // 封住数据信息
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
 
-        HttpPost post = new HttpPost("https://api.zsxq.com/v2/topics/588421844888254/comments");
+        HttpPost post = new HttpPost("https://api.zsxq.com/v2/topics/588428242182244/comments");
 
         post.addHeader("cookie", "cookie数据");
         post.addHeader("Content-Type", "application/json; charset=UTF-8");
