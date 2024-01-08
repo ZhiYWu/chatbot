@@ -1,7 +1,7 @@
 ## chatbot
 AI问答助手
 
-使用文心一言大语言模型`ERNIE-Bot`实现对特定网页（知识星球https://wx.zsxq.com/dweb2/index/group/28885518425541）的问题回复。
+使用文心一言大语言模型`ERNIE-Bot`实现对特定网页问题的回复（知识星球https://wx.zsxq.com/dweb2/index/group/28885518425541）
 
 `ERNIE-Bot`每次都会在网站进行**刷新**的时候，都会对该网站此时检索到的第一个问题的内容进行回答（以评论的形式）。
 
