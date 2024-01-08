@@ -61,20 +61,15 @@ public class ApiTest {
     }
 
     @Test
-    public void test_chatGPT() throws IOException {
+    public void test_ERNIEBot() throws IOException {
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
 
-        HttpPost post = new HttpPost("https://api.openai.com/v1/chat/completions");
+        HttpPost post = new HttpPost("https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/completions?access_token=24.6fe9a5e80e311c0ca46de18417ff1162.2592000.1707303734.282335-46644035");
         post.addHeader("Content-Type", "application/json");
-        post.addHeader("Authorization", "Bearer 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");
 
-        String paramJson = "{\n" +
-                "     \"model\": \"gpt-3.5-turbo\",\n" +
-                "     \"messages\": [{\"role\": \"user\", \"content\": \"Say this is a test!\"}],\n" +
-                "     \"temperature\": 0.7\n" +
-                "   }";
+        String paramJson = "{\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"disable_search\":false,\"enable_citation\":false}";
 
-        StringEntity stringEntity = new StringEntity(paramJson, ContentType.create("text/json", "UTF-8"));
+        StringEntity stringEntity = new StringEntity(paramJson, ContentType.create("application/json", "UTF-8"));
         post.setEntity(stringEntity);
         CloseableHttpResponse response = httpClient.execute(post);
         if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {

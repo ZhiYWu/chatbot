@@ -1,9 +1,6 @@
 package com.scnu.chatbot.domain.ai.model.aggregates;
 
-import com.scnu.chatbot.domain.ai.model.vo.Choices;
 import com.scnu.chatbot.domain.ai.model.vo.Usage;
-
-import java.util.List;
 
 public class AIAnswer {
 
@@ -13,69 +10,62 @@ public class AIAnswer {
 
     private int created;
 
-    private String model;
+    private String result;
 
-    private List<Choices> choices;
+    private boolean is_truncated;
+
+    private boolean need_clear_history;
+
+    private String finish_reason;
 
     private Usage usage;
 
-    private String system_fingerprint;
-
-    public Usage getUsage() {
-        return usage;
-    }
-
-    public void setUsage(Usage usage) {
-        this.usage = usage;
-    }
-
-    public String getSystem_fingerprint() {
-        return system_fingerprint;
-    }
-
-    public void setSystem_fingerprint(String system_fingerprint) {
-        this.system_fingerprint = system_fingerprint;
-    }
-
-
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
+    public void setId(String id){
         this.id = id;
     }
-
-    public String getObject() {
-        return object;
+    public String getId(){
+        return this.id;
     }
-
-    public void setObject(String object) {
+    public void setObject(String object){
         this.object = object;
     }
-
-    public int getCreated() {
-        return created;
+    public String getObject(){
+        return this.object;
     }
-
-    public void setCreated(int created) {
+    public void setCreated(int created){
         this.created = created;
     }
-
-    public String getModel() {
-        return model;
+    public int getCreated(){
+        return this.created;
     }
-
-    public void setModel(String model) {
-        this.model = model;
+    public void setResult(String result){
+        this.result = result;
     }
-
-    public List<Choices> getChoices() {
-        return choices;
+    public String getResult(){
+        return this.result;
     }
-
-    public void setChoices(List<Choices> choices) {
-        this.choices = choices;
+    public void setIs_truncated(boolean is_truncated){
+        this.is_truncated = is_truncated;
+    }
+    public boolean getIs_truncated(){
+        return this.is_truncated;
+    }
+    public void setNeed_clear_history(boolean need_clear_history){
+        this.need_clear_history = need_clear_history;
+    }
+    public boolean getNeed_clear_history(){
+        return this.need_clear_history;
+    }
+    public void setFinish_reason(String finish_reason){
+        this.finish_reason = finish_reason;
+    }
+    public String getFinish_reason(){
+        return this.finish_reason;
+    }
+    public void setUsage(Usage usage){
+        this.usage = usage;
+    }
+    public Usage getUsage(){
+        return this.usage;
     }
 }

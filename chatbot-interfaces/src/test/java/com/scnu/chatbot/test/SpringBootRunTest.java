@@ -1,7 +1,7 @@
 package com.scnu.chatbot.test;
 
 import com.alibaba.fastjson.JSON;
-import com.scnu.chatbot.domain.ai.service.OpenAI;
+import com.scnu.chatbot.domain.ai.service.BaiDuAI;
 import com.scnu.chatbot.domain.zsxq.IZsxqApi;
 import com.scnu.chatbot.domain.zsxq.model.aggregates.UnAnsweredQuestionsAggregates;
 import com.scnu.chatbot.domain.zsxq.model.vo.Topics;
@@ -29,14 +29,14 @@ public class SpringBootRunTest {
     @Value("${chatbot-api.cookie}")
     private String cookie;
 
-    @Value("${chatbot-api.openAiKey}")
-    private String openAiKey;
+    @Value("${chatbot-api.accessToken}")
+    private String accessToken;
 
     @Resource
     private IZsxqApi zsxqApi;
 
     @Resource
-    private OpenAI openAI;
+    private BaiDuAI baiduAI;
 
     @Test
     public void testZsxqApi() throws IOException {
@@ -55,7 +55,7 @@ public class SpringBootRunTest {
 
     @Test
     public void test_openAi() throws IOException {
-        String response = openAI.doChatGPT(openAiKey, "帮我写一个java冒泡排序");
+        String response = baiduAI.doERNIEBot(accessToken, "请告诉我Spring Security有什么用");
         logger.info("测试结果：{}", response);
     }
 
